@@ -26,4 +26,7 @@ Simply double-click `QPM_Installer.command` again and select the **Uninstall** o
 
 ## License & Credits
 QPM is a fork of the excellent [proton-port-sync](https://github.com/deecypher/proton-port-sync) by deecypher. 
-The original project was published without an explicit license (All Rights Reserved by default). As such, this fork is intended strictly for personal, private use on macOS to resolve interface binding and modern qBittorrent cookie compatibility issues. No explicit open-source license is provided.
+The original project was published under the **MIT License**, meaning you are free to share, modify, and distribute it. 
+
+### MIT License
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software...
