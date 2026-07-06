@@ -15,7 +15,7 @@ When you use ProtonVPN for P2P, they dynamically change your port forwarding num
 Install QPM securely using Homebrew to bypass Apple's developer warnings automatically:
 
 ```bash
-brew install --no-quarantine 7axman/qpm/qpm
+brew install 7axman/qpm/qpm
 ```
 
 ## ⚙️ Prerequisites (qBittorrent Setup)
