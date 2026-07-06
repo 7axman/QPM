@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QPM - ProtonVPN Port Sync</title>
+    <meta name="description" content="A beautiful, native macOS menu bar app that flawlessly syncs your ProtonVPN NAT-PMP port directly to qBittorrent.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="glow-bg"></div>
+    <header class="navbar">
+        <div class="logo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            QPM
+        </div>
+        <nav>
+            <a href="#features">Features</a>
+            <a href="#install">Installation</a>
+            <a href="#changelog">Changelog</a>
+            <a href="https://github.com/7axman/QPM" target="_blank" class="github-link">GitHub</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Torrent Safely. <br><span class="highlight">Sync Automatically.</span></h1>
+                <p>A beautiful, native macOS menu bar app that flawlessly syncs your ProtonVPN NAT-PMP port directly to qBittorrent. Zero configuration. Zero Python scripts.</p>
+                <div class="cta-buttons">
+                    <a href="#install" class="btn-primary">Get Started</a>
+                    <a href="https://github.com/7axman/QPM" class="btn-secondary">View Source</a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <div class="glass-reflection"></div>
+                <img src="assets/hero.jpg" alt="QPM macOS App Mockup" class="hero-image">
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <h2>Why QPM?</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="icon green">⚡️</div>
+                    <h3>100% Native Swift</h3>
+                    <p>Built directly on Apple's Network framework. Blazingly fast, uses almost zero RAM, and looks beautiful in your Menu Bar.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon purple">🔌</div>
+                    <h3>Zero Python</h3>
+                    <p>No pip, no virtual environments, no broken terminal scripts. Just install it and it runs completely autonomously.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon blue">🔄</div>
+                    <h3>Auto-Detects</h3>
+                    <p>Automatically scans the system to find your active VPN interface. If you disconnect, it instantly detects it.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="install" class="installation">
+            <h2>Installation</h2>
+            <div class="glass-card">
+                <p>Install securely using Homebrew. This automatically bypasses Apple's quarantine warnings.</p>
+                <div class="code-block">
+                    <code>brew install 7axman/qpm/qpm</code>
+                    <button class="copy-btn" onclick="navigator.clipboard.writeText('brew install 7axman/qpm/qpm')">Copy</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="changelog" class="changelog">
+            <h2>Changelog</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="date">v1.0.0</div>
+                    <div class="content">
+                        <h3>Initial Native Release</h3>
+                        <ul>
+                            <li>Completely rewrote the original Python script in 100% native Swift.</li>
+                            <li>Added a native macOS Menu Bar UI (Popover).</li>
+                            <li>Implemented pure Swift UDP NAT-PMP port request mechanism.</li>
+                            <li>Added dynamic URLSession HTTP cookie handling for qBittorrent.</li>
+                            <li>Added UI fields to customize WebUI port and credentials.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Released under the MIT License. Forked with ❤️ from proton-port-sync.</p>
+    </footer>
+</body>
+</html>
