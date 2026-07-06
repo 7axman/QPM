@@ -151,16 +151,16 @@ h1 {
 .hero-image-wrapper {
     flex: 1.2;
     position: relative;
-    border-radius: 20px;
+    border-radius: 14px;
     overflow: hidden;
-    border: 1px solid var(--glass-border);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 40px var(--primary-glow);
-    transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
-    transition: transform 0.5s ease;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6), 0 0 30px var(--primary-glow);
+    transition: transform 0.4s ease;
+    max-width: 380px;
 }
 
 .hero-image-wrapper:hover {
-    transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+    transform: translateY(-8px);
 }
 
 .hero-image {
