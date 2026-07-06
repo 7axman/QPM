@@ -61,13 +61,21 @@
         </section>
 
         <section id="install" class="installation">
-            <h2>Installation</h2>
+            <h2>Installation & Setup</h2>
             <div class="glass-card">
-                <p>Install securely using Homebrew. This automatically bypasses Apple's quarantine warnings.</p>
+                <p>Install securely using Homebrew to bypass Apple's developer quarantine restrictions:</p>
                 <div class="code-block">
                     <code>brew install 7axman/qpm/qpm</code>
                     <button class="copy-btn" onclick="navigator.clipboard.writeText('brew install 7axman/qpm/qpm')">Copy</button>
                 </div>
+                
+                <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: white;">Prerequisites: qBittorrent Setup</h3>
+                <ul style="text-align: left; color: #94A3B8; padding-left: 2rem; line-height: 1.8;">
+                    <li>Open <strong>qBittorrent</strong> and go to <strong>Preferences > WebUI</strong>.</li>
+                    <li>Check the box for <strong>"Web User Interface (Remote control)"</strong>.</li>
+                    <li>Set a <strong>Username</strong> and <strong>Password</strong> in the Authentication section.</li>
+                    <li>Open <strong>QPM</strong> from your Applications folder and enter those credentials into the popover menu!</li>
+                </ul>
             </div>
         </section>
 

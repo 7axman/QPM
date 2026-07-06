@@ -1,31 +1,39 @@
-# QPM (qBittorrent ProtonVPN Manager)
+# QPM (qBittorrent ProtonVPN Monitor)
 
-QPM is a background daemon designed specifically for macOS that permanently fixes two major annoyances when torrenting over ProtonVPN with qBittorrent:
+QPM is a blazing fast, 100% native macOS Menu Bar application that perfectly automates ProtonVPN port forwarding for qBittorrent.
 
-1. **Automatic Port Forwarding Sync:** ProtonVPN dynamically changes your assigned port. This script automatically asks ProtonVPN for your new port every time you connect, logs into qBittorrent, and updates your `listen_port` silently.
-2. **Automatic Network Interface Binding (`utun` fix):** macOS dynamically reassigns the `utunX` interface number (e.g., `utun4` becomes `utun5`) when VPNs reconnect. To prevent IP leaks, you should bind qBittorrent to the specific VPN interface. QPM automatically scans your network to locate ProtonVPN's active interface (by finding the `10.2.x.x` IP) and instantly updates qBittorrent's Network Interface setting to perfectly match it.
+When you use ProtonVPN for P2P, they dynamically change your port forwarding number. Instead of manually typing this into qBittorrent every time you connect, QPM runs completely in the background, requests the new port natively using NAT-PMP, and securely pushes it directly to your qBittorrent WebUI. 
 
-## Key Features
-* **Zero Configuration After Setup:** Simply run the installer and the background macOS `LaunchAgent` will start automatically every time you log in.
-* **Modern Cookie Support:** Fully supports newer qBittorrent versions that use `QBT_SID_XXXX` cookies instead of the legacy `SID` cookie.
-* **Strict Interface Matching:** Prevents traffic leaks by never accidentally reverting to "Any interface" and by ignoring non-ProtonVPN `utun` interfaces (like iCloud Private Relay).
-* **Safe Installation:** Installs entirely inside an isolated Python Virtual Environment without touching system python or homebrew packages globally.
+## ✨ Key Features
+- **100% Native Swift**: No Python scripts, no virtual environments, no terminal commands.
+- **macOS Menu Bar UI**: A beautiful, minimalist menu bar popover to check status and force syncs.
+- **Automatic Interface Binding**: Scans `ifconfig` automatically to bind qBittorrent strictly to the active VPN interface (e.g. `utun4`) to prevent IP leaks.
+- **Instantly Reactive**: Checks your connection gracefully and syncs in milliseconds if you change servers.
 
-## Prerequisites
-* **qBittorrent WebUI Enabled:** Open qBittorrent -> Preferences -> WebUI. Check "Web User Interface (Remote control)" and set a port, username, and password. 
-* **ProtonVPN via WireGuard:** You must be using the WireGuard protocol (either through the official ProtonVPN app or the official WireGuard app) connected to a P2P port-forwarding server.
+## 📦 Installation
 
-## Installation
-1. Download `QPM_Installer.command`
-2. Open Terminal and make it executable: `chmod +x QPM_Installer.command`
-3. Double click the file to run the installer.
-4. Input your qBittorrent WebUI credentials when prompted.
+Install QPM securely using Homebrew to bypass Apple's developer warnings automatically:
 
-## Uninstallation
-Simply double-click `QPM_Installer.command` again and select the **Uninstall** option. It will cleanly remove the LaunchAgent and the script directory.
+```bash
+brew install 7axman/qpm/qpm
+```
 
-## License & Credits
-QPM is a fork of the excellent [proton-port-sync](https://github.com/deecypher/proton-port-sync) by deecypher. 
-The original project was published under the **MIT License**, meaning you are free to share, modify, and distribute it. 
+## ⚙️ Prerequisites (qBittorrent Setup)
 
-See the [LICENSE](LICENSE) file for the full text.
+Before launching QPM, you must enable the qBittorrent WebUI so QPM has a way to inject the new port.
+
+1. Open **qBittorrent** and go to **Preferences > WebUI**.
+2. Check the box for **"Web User Interface (Remote control)"**.
+3. Under the Authentication section, set a **Username** and **Password**.
+4. Remember the **Port** listed at the top (usually `8080`).
+5. Open **QPM** from your Applications folder, click the Menu Bar icon, and type those exact credentials into the UI!
+
+## 🗑️ Uninstallation
+
+If you ever want to remove QPM:
+```bash
+brew uninstall qpm
+```
+
+## License
+Released under the MIT License. Forked with ❤️ from [proton-port-sync](https://github.com/deecypher/proton-port-sync).
