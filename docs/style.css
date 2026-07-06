@@ -153,10 +153,8 @@ h1 {
     position: relative;
     border-radius: 14px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.6), 0 0 30px var(--primary-glow);
     transition: transform 0.4s ease;
-    max-width: 380px;
+    max-width: 500px;
 }
 
 .hero-image-wrapper:hover {
